@@ -31,6 +31,10 @@ const updateTask=async(req,res)=>{
 const deleteTask=async(req,res)=>{
     await Task.findByIdAndDelete(req.params.id);
     res.send("Task deleted")
+    if (!req.params.id) {
+  return res.status(400).json({ error: "Task ID is required" });
+}
+
 };
 
 module.exports={getTask,createTask,updateTask,deleteTask};

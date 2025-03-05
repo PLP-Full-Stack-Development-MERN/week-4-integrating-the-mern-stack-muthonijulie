@@ -1,22 +1,26 @@
-import React from 'react'
+import React from 'react';
 import TaskItem from './TaskItem';
 
-function TaskList({tasks,toggleComplete,deleteTask}) {
-  if (!tasks){
-    return <p>No tasks available </p>
-  }
-    return (
-     <ul className="mt-4 space-y-2">
-      {tasks.map((task) => (
-        <TaskItem 
-          key={task.id} 
-          task={task} 
-          toggleComplete={toggleComplete} 
-          deleteTask={deleteTask} 
-        />
-      ))}
-    </ul>
-  )
+function TaskList({ tasks, toggleComplete, deleteTask }) {
+  return (
+    <div className="mt-4">
+      {tasks.length === 0 ? (
+        <p className="text-gray-600 text-center">No tasks available. Add some tasks!</p>
+      ) : (
+        <ul className="space-y-3">
+          {tasks.map((task) => (
+            <TaskItem
+              key={task._id}
+              task={task}
+              toggleComplete={toggleComplete}
+              deleteTask={deleteTask}
+            />
+          ))}
+        </ul>
+      )}
+    </div>
+  );
 }
 
-export default TaskList
+export default TaskList;
+
