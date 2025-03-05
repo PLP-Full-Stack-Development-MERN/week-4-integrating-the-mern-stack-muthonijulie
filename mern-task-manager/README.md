@@ -21,3 +21,5 @@ The user can add the task details in the form and click the add button to submit
 The task item in displayed in the task list below the task form.
 
 To view the deployed sites, visit:
+https://render-mern-backend.onrender.com-backend
+https://mern-task-manager-7fpd8oyhj-julies-projects-8179a2e9.vercel-frontend
